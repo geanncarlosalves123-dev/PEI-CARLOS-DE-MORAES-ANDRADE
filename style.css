@@ -28,6 +28,7 @@
     align-items:center;
     padding:15px 30px;
     z-index:1000;
+    box-shadow:0 2px 10px rgba(0,0,0,0.2);
     }
     
     .menu-toggle{
@@ -35,8 +36,11 @@
     font-size:28px;
     cursor:pointer;
     color:white;
+    background:none;
+    border:none;
     }
     
+    /* NAV */
     nav{
     display:flex;
     align-items:center;
@@ -46,6 +50,11 @@
     color:white;
     margin:10px;
     text-decoration:none;
+    transition:.3s;
+    }
+    
+    nav a:hover{
+    color:#1e90ff;
     }
     
     #modoBtn{
@@ -76,24 +85,13 @@
     background:rgba(0,0,0,0.5);
     }
     
-    .btn{
-    background:#1e90ff;
-    padding:12px 28px;
-    border-radius:30px;
-    color:white;
-    text-decoration:none;
-    }
-    
     /* SEÇÕES */
     section{
     padding:100px 40px;
     text-align:center;
     }
     
-    /* ========================= */
-    /* TÍTULOS DAS SEÇÕES */
-    /* ========================= */
-    
+    /* TÍTULOS */
     .titulo-secao{
     font-size:32px;
     margin-bottom:30px;
@@ -134,9 +132,8 @@
     align-items:stretch;
     }
     
-    /* CARD */
     .card{
-    background:white; /* ✅ corrigido */
+    background:rgb(255, 255, 255);
     width:250px;
     border-radius:10px;
     padding:10px;
@@ -146,10 +143,15 @@
     flex-direction:column;
     align-items:center;
     text-align:center;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
     }
     
     .card:hover{
     transform:translateY(-10px);
+    }
+    
+    body.dark .card{
+    background:#1e1e1e;
     }
     
     /* IMAGEM */
@@ -157,7 +159,6 @@
     width:100%;
     height:180px;
     object-fit:cover;
-    display:block;
     border-radius:8px;
     transition:.3s;
     }
@@ -175,25 +176,100 @@
     font-size:14px;
     }
     
-    /* PROFESSORES */
-    .professor img{
-    width:120px;
-    height:120px;
+    /* ========================= */
+    /* PROFESSORES (NOVO DESIGN) */
+    /* ========================= */
+    
+    .professor-diretor{
+    padding:20px;
+    border-radius:15px;
+    transition:0.3s;
+    position:relative;
+    }
+    
+    .professor-diretor img{
+    width:140px;
+    height:140px;
     border-radius:50%;
     object-fit:cover;
-    display:block;
     margin:10px auto;
-    border:4px solid #1e90ff;
+    border:5px solid #1e90ff;
+    transition:0.3s;
     }
     
-    /* SOCIAL */
-    .social{
-    opacity:0;
-    transition:.3s;
+    .professor-diretor:hover{
+    transform:translateY(-10px) scale(1.03);
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
     }
     
-    .professor:hover .social{
-    opacity:1;
+    .professor-diretor:hover img{
+    transform:scale(1.1);
+    }
+    
+    .professor-diretor h3{
+    margin-top:10px;
+    font-size:20px;
+    }
+    
+    .professor-diretor p{
+    font-size:14px;
+    color:#020481;
+    }
+    
+    body.dark .professor-diretor p{
+    color:#1d118e;
+    }
+    
+    /* ========================= */
+    /* CARROSSEL 🔥 */
+    /* ========================= */
+    
+    .carrossel-container{
+    position:relative;
+    max-width:900px;
+    margin:0 auto;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    }
+    
+    .carrossel{
+    display:flex;
+    transition:transform 0.5s ease;
+    width:100%;
+    }
+    
+    .carrossel .card{
+    min-width:100%;
+    max-width:100%;
+    }
+    
+    .seta{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:#1e90ff;
+    border:none;
+    color:white;
+    font-size:30px;
+    padding:10px 15px;
+    cursor:pointer;
+    border-radius:50%;
+    z-index:10;
+    transition:0.3s;
+    }
+    
+    .seta:hover{
+    background:#0b63c7;
+    }
+    
+    .esquerda{
+    left:10px;
+    }
+    
+    .direita{
+    right:10px;
     }
     
     /* MODAL */
@@ -202,7 +278,7 @@
     position:fixed;
     width:100%;
     height:100%;
-    background:rgba(0,0,0,.7);
+    background:rgba(0, 0, 0, 0.7);
     justify-content:center;
     align-items:center;
     }
@@ -212,6 +288,8 @@
     padding:20px;
     border-radius:10px;
     text-align:center;
+    max-width:300px;
+    width:90%;
     }
     
     body.dark .modal-content{
@@ -238,17 +316,45 @@
     transform:scale(1.05);
     }
     
+    /* CONTATO */
+    #contato{
+    background:#ffffff;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    max-width:600px;
+    margin:0 auto;
+    }
+    
+    body.dark #contato{
+    background:#1e1e1e;
+    }
+    
+    #contato p{
+    margin:10px 0;
+    font-size:18px;
+    }
+    
+    /* MAPA */
+    #mapa iframe{
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    }
+    
     /* FOOTER */
     footer{
     background:#002f5b;
     color:white;
-    padding:20px;
+    padding:30px 20px;
     margin-top:40px;
+    text-align:center;
     }
     
-    /* ========================= */
-    /* MOBILE PERFEITO 🔥 */
-    /* ========================= */
+    footer p{
+    margin:5px 0;
+    font-size:14px;
+    }
+    
+    /* MOBILE */
     @media(max-width:768px){
     
     header{
@@ -259,7 +365,6 @@
     display:block;
     }
     
-    /* MENU */
     nav{
     position:absolute;
     top:70px;
@@ -281,36 +386,133 @@
     width:100%;
     }
     
-    /* CARDS CENTRALIZADOS */
     .cards{
     flex-direction:column;
     align-items:center;
     }
     
-    /* CARD AJUSTADO */
     .card{
     width:90%;
     max-width:320px;
     margin:0 auto;
     }
     
-    /* IMAGENS CENTRALIZADAS */
-    .card img{
-    margin:0 auto;
-    }
-    
-    /* PROFESSORES */
-    .professor img{
-    margin:10px auto;
-    }
-    
-    /* GALERIA */
     .galeria{
     grid-template-columns:1fr;
     }
     
-    .galeria img{
-    margin:0 auto;
+    /* ajuste mobile carrossel */
+    .seta{
+    font-size:22px;
+    padding:8px;
     }
     
+    .professor-diretor img{
+    width:120px;
+    height:120px;
     }
+    
+
+    }
+    /* ========================= */
+/* REDES SOCIAIS (SOBRE) 🔥 */
+/* ========================= */
+
+.redes-sobre {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .social {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .social img {
+    width: 20px;
+  }
+  
+  .social.insta {
+    background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
+  }
+  
+  .social.whats {
+    background: #25D366;
+  }
+  
+  .social:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  }
+  
+  /* ========================= */
+  /* BOTÕES FLUTUANTES 🔥 */
+  /* ========================= */
+  
+  .botoes-flutuantes {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 999;
+  }
+  
+  .btn {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 22px;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: 0.3s;
+  }
+  
+  .btn img {
+    width: 28px;
+  }
+  
+  .btn.insta {
+    background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
+  }
+  
+  .btn.whats {
+    background: #25D366;
+  }
+  
+  /* efeito hover */
+  .btn:hover {
+    transform: scale(1.15);
+  }
+  
+  /* animação tipo WhatsApp real 🔥 */
+  .btn.whats {
+    animation: pulse 1.5s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+  }
