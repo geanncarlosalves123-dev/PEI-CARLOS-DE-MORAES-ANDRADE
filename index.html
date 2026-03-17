@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PEI Carlos de Moraes Andrade</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<div class="logo">
+<h1>PEI Carlos de Moraes Andrade</h1>
+</div>
+
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+<nav id="menu">
+<a href="#inicio">Início</a>
+<a href="#sobre">Sobre</a>
+<a href="#estrutura">Estrutura</a>
+<a href="#projetos">Projetos</a>
+<a href="#galeria">Galeria</a>
+<a href="#contato">Contato</a>
+<button id="modoBtn">🌙</button>
+</nav>
+</header>
+
+<!-- BANNER -->
+<section class="banner" id="inicio">
+<div class="banner-overlay"></div>
+<div class="banner-text">
+<h2>Bem-vindo à nossa escola</h2>
+<p>Educando cidadãos do futuro com excelência acadêmica.</p>
+<a href="#sobre" class="btn">Saiba Mais</a>
+</div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre">
+<h2 class="titulo-secao">Sobre</h2>
+<p>Educação de qualidade com foco no desenvolvimento dos alunos.</p>
+</section>
+
+<!-- ESTRUTURA -->
+<section id="estrutura">
+<h2 class="titulo-secao">Estrutura</h2>
+<div class="cards">
+<div class="card">
+<img src="https://picsum.photos/300/200">
+<h3>Salas</h3>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/301/200">
+<h3>Pátio</h3>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/302/200">
+<h3>Laboratório</h3>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/303/200">
+<h3>Biblioteca</h3>
+</div>
+</div>
+</section>
+
+<!-- PROJETOS -->
+<section id="projetos">
+<h2 class="titulo-secao">Projetos</h2>
+<div class="cards">
+
+<div class="card">
+<img src="https://picsum.photos/300/201">
+<h3>Leitura</h3>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/301/201">
+<h3>Tecnologia</h3>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/302/201">
+<h3>Esporte</h3>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/303/201">
+<h3>Arte</h3>
+</div>
+
+</div>
+</section>
+
+<!-- PROFESSORES -->
+<section id="equipe">
+<h2 class="titulo-secao">Professores</h2>
+
+<div class="cards">
+
+<div class="card professor" onclick="abrirModal('João Silva','40 anos','Matemática','https://picsum.photos/200?1')">
+<img src="https://picsum.photos/200?1">
+<h3>João Silva</h3>
+<p>Matemática</p>
+<div class="social">
+<span>📘</span>
+<span>📷</span>
+<span>💼</span>
+</div>
+</div>
+
+<div class="card professor" onclick="abrirModal('Maria Souza','35 anos','Ciências','https://picsum.photos/200?2')">
+<img src="https://picsum.photos/200?2">
+<h3>Maria Souza</h3>
+<p>Ciências</p>
+<div class="social">
+<span>📘</span>
+<span>📷</span>
+<span>💼</span>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+<div class="modal-content">
+<span class="fechar" onclick="fecharModal()">×</span>
+<img id="modalImg">
+<h3 id="modalNome"></h3>
+<p id="modalIdade"></p>
+<p id="modalMateria"></p>
+</div>
+</div>
+
+<!-- GALERIA -->
+<section id="galeria">
+<h2 class="titulo-secao">Galeria</h2>
+
+<div class="galeria">
+<img src="https://picsum.photos/300/300">
+<img src="https://picsum.photos/301/300">
+<img src="https://picsum.photos/302/300">
+<img src="https://picsum.photos/303/300">
+</div>
+
+</section>
+
+<!-- CONTATO -->
+<section id="contato">
+<h2 class="titulo-secao">Contato</h2>
+<p>Email: escola@email.com</p>
+</section>
+
+<footer>
+<p>© 2026 PEI Carlos de Moraes Andrade</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
