@@ -10,56 +10,71 @@
 
 <body>
 
-<header>
+<header id="header">
 
-<div class="logo">
-<h1>PEI Carlos de Moraes Andrade</h1>
-</div>
-
-<button class="menu-toggle" onclick="toggleMenu()">☰</button>
-
-<nav id="menu">
-<a href="#inicio">Início</a>
-<a href="#sobre">Sobre</a>
-<a href="#estrutura">Estrutura</a>
-<a href="#projetos">Projetos</a>
-<a href="#galeria">Galeria</a>
-<a href="#contato">Contato</a>
-<button id="modoBtn">🌙</button>
-</nav>
-
-</header>
+    <div class="logo">
+    <h1>PEI CMA</h1>
+    </div>
+    
+    <nav id="menu">
+    <a href="#inicio">Início</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#estrutura">Estrutura</a>
+    <a href="#projetos">Projetos</a>
+    <a href="#cursos">Cursos</a>
+    <a href="#contato">Contato</a>
+    </nav>
+    
+    <div class="acoes">
+    <button id="modoBtn">🌙</button>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    </div>
+    
+    </header>
 
 <!-- BANNER -->
 <section class="banner" id="inicio">
-<div class="banner-overlay"></div>
-<div class="banner-text">
-<h2>Bem-vindo à nossa escola</h2>
-<p>Educando cidadãos do futuro com excelência acadêmica.</p>
-</div>
-</section>
 
-<!-- SOBRE -->
-<!-- SOBRE -->
-<section id="sobre">
-    <h2 class="titulo-secao">Sobre</h2>
-    <p>Educação de qualidade com foco no desenvolvimento dos alunos.</p>
+    <div class="banner-overlay"></div>
     
-    <!-- REDES SOCIAIS ABAIXO DO SOBRE 🔥 -->
-    <div class="redes-sobre">
+    <div class="banner-content">
+    <h2>Transformando o futuro através da educação</h2>
+    <p>Formando alunos preparados para os desafios do mundo.</p>
     
-    <a href="https://www.instagram.com/carlos_de_moraes_andrade?igsh=MWZlemNxMWgxb2F1cw==" target="_blank" class="social insta">
-    📷 Instagram
-    </a>
-    
-    <a href="https://wa.me/5511999999999" target="_blank" class="social whats">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
-         WhatsApp
-        </a>
-    
+    <a href="#cursos" class="banner-btn">Explorar Cursos</a>
     </div>
     
     </section>
+
+
+<!-- SOBRE -->
+<section id="sobre">
+
+<h2 class="titulo-secao">Sobre</h2>
+
+<div class="sobre-container">
+
+<div class="sobre-box">
+
+<div class="luz"></div>
+
+<p class="sobre-texto">
+Educação de qualidade com foco no desenvolvimento dos alunos,
+preparando jovens para os desafios do futuro com inovação,
+tecnologia e excelência no ensino.
+</p>
+
+<div class="redes-sobre">
+    <a href="https://www.instagram.com/seuusuario" class="social insta" target="_blank" rel="noopener noreferrer">
+      <span>📷</span> Instagram
+    </a>
+  
+    <a href="https://wa.me/5511999999999" class="social whats" target="_blank" rel="noopener noreferrer">
+      <span>💬</span> WhatsApp
+    </a>
+  </div>
+
+</section>
 
 <!-- ESTRUTURA -->
 <section id="estrutura">
@@ -68,22 +83,26 @@
 
 <div class="card">
 <img src="https://picsum.photos/300/200">
-<h3>Salas</h3>
+<h3>Sala De Informatica</h3>
+<p>Espaço utilizado para pesquisas, trabalhos e etc</p>
 </div>
 
 <div class="card">
 <img src="https://picsum.photos/301/200">
-<h3>Pátio</h3>
+<h3>Quadra De Esportes</h3>
+<p>Espaço Para os Jovens praticarem exercicios físicos</p>
 </div>
 
 <div class="card">
-<img src="https://picsum.photos/302/200">
-<h3>Laboratório</h3>
-</div>
+    <img src="https://picsum.photos/300/200" alt="Laboratório da escola">
+    <h3>Laboratório</h3>
+    <p>Espaço equipado para experiências científicas.</p>
+    </div>
 
 <div class="card">
 <img src="https://picsum.photos/303/200">
 <h3>Biblioteca</h3>
+<p>Espaço para os Jovens praticarem leitura e usar para pesquisas</p>
 </div>
 
 </div>
@@ -119,39 +138,57 @@
 
 <!-- PROFESSORES -->
 <section id="equipe">
-<h2 class="titulo-secao">Professores e Diretores</h2>
+    <h2 class="titulo-secao">Professores e Diretores</h2>
+    
+    <div class="curso-carrossel">
+    
+    <button class="curso-seta esquerda" onclick="moverProfessor(-1)">❮</button>
+    
+    <div class="curso-slider" id="professorSlider">
+    
+    <!-- PROFESSOR 1 -->
+    <div class="curso-slide professor-slide" onclick="abrirModal('João Silva','40 anos','Matemática','https://picsum.photos/300?1')">
+    <div class="curso-texto">
+    <h2>João Silva</h2>
+    <p>Professor de Matemática</p>
+    <span>Especialista em ensino de exatas com foco em raciocínio lógico e preparação para desafios acadêmicos.</span>
+    </div>
+    <div class="curso-img">
+    <img src="https://picsum.photos/300?1">
+    </div>
+    </div>
+    
+    <!-- PROFESSOR 2 -->
+    <div class="curso-slide professor-slide" onclick="abrirModal('Maria Souza','35 anos','Ciências','https://picsum.photos/300?2')">
+    <div class="curso-texto">
+    <h2>Maria Souza</h2>
+    <p>Professora de Ciências</p>
+    <span>Atua com experimentos práticos e ensino dinâmico voltado à curiosidade científica.</span>
+    </div>
+    <div class="curso-img">
+    <img src="https://picsum.photos/300?2">
+    </div>
+    </div>
+    
+    <!-- PROFESSOR 3 -->
+    <div class="curso-slide professor-slide" onclick="abrirModal('Carlos Lima','45 anos','História','https://picsum.photos/300?3')">
+    <div class="curso-texto">
+    <h2>Carlos Lima</h2>
+    <p>Professor de História</p>
+    <span>Ensino interativo com foco em interpretação crítica e compreensão histórica.</span>
+    </div>
+    <div class="curso-img">
+    <img src="https://picsum.photos/300?3">
+    </div>
+    </div>
+    
+    </div>
+    
+    <button class="curso-seta direita" onclick="moverProfessor(1)">❯</button>
+    
+    </div>
+    </section>
 
-<div class="carrossel-container">
-
-<button class="seta esquerda" onclick="moverSlide(-1)">❮</button>
-
-<div class="carrossel" id="carrossel">
-
-<div class="card professor-diretor" onclick="abrirModal('João Silva','40 anos','Matemática','https://picsum.photos/200?1')">
-<img src="https://picsum.photos/200?1">
-<h3>João Silva</h3>
-<p>Matemática</p>
-</div>
-
-<div class="card professor-diretor" onclick="abrirModal('Maria Souza','35 anos','Ciências','https://picsum.photos/200?2')">
-<img src="https://picsum.photos/200?2">
-<h3>Maria Souza</h3>
-<p>Ciências</p>
-</div>
-
-<div class="card professor-diretor" onclick="abrirModal('Carlos Lima','45 anos','História','https://picsum.photos/200?3')">
-<img src="https://picsum.photos/200?3">
-<h3>Carlos Lima</h3>
-<p>História</p>
-</div>
-
-</div>
-
-<button class="seta direita" onclick="moverSlide(1)">❯</button>
-
-</div>
-
-</section>
 
 <!-- MODAL -->
 <div id="modal" class="modal">
@@ -164,27 +201,98 @@
 </div>
 </div>
 
-<!-- GALERIA -->
-<section id="galeria">
-<h2 class="titulo-secao">Galeria</h2>
-
-<div class="galeria">
-<img src="https://picsum.photos/300/300">
-<img src="https://picsum.photos/301/300">
-<img src="https://picsum.photos/302/300">
-<img src="https://picsum.photos/303/300">
-</div>
-
-</section>
+<!-- CURSOS -->
+<section id="cursos">
+    <h2 class="titulo-secao">Cursos</h2>
+    
+    <div class="curso-carrossel">
+    
+    <button class="curso-seta esquerda" onclick="moverCurso(-1)">❮</button>
+    
+    <div class="curso-slider" id="cursoSlider">
+    
+    <!-- CURSO 1 -->
+    <div class="curso-slide">
+    <div class="curso-texto">
+    <h2>Enfermagem</h2>
+    <p>Curso voltado para formação na área da saúde.</p>
+    <span>Aprenda cuidados médicos, primeiros socorros e prática hospitalar.</span>
+    </div>
+    <div class="curso-img">
+        <img src="https://estaticos.animaeducacao.com.br/medias/20250514152345/-_Imagem_-_Curso_de_Enfermagem_como_%C3%A9_dura%C3%A7%C3%A3o_%C3%A1reas_de_atua%C3%A7%C3%A3o_e_mais.webp">
+    </div>
+    </div>
+    
+    <!-- CURSO 2 -->
+    <div class="curso-slide">
+    <div class="curso-texto">
+    <h2>Desenvolvimento de Sistemas</h2>
+    <p>Curso completo de programação e tecnologia.</p>
+    <span>Aprenda HTML, CSS, JavaScript e desenvolvimento de sistemas.</span>
+    </div>
+    <div class="curso-img">
+    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475">
+    </div>
+    </div>
+    
+    <!-- CURSO 3 -->
+    <div class="curso-slide">
+    <div class="curso-texto">
+    <h2>Vendas</h2>
+    <p>Curso focado em técnicas comerciais.</p>
+    <span>Aprenda marketing, negociação e estratégias de vendas.</span>
+    </div>
+    <div class="curso-img">
+    <img src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b">
+    </div>
+    </div>
+    
+    </div>
+    
+    <button class="curso-seta direita" onclick="moverCurso(1)">❯</button>
+    
+    </div>
+    </section>
 
 <!-- CONTATO -->
 <section id="contato">
-<h2 class="titulo-secao">Contato</h2>
 
-<p><strong>Email:</strong> escola@email.com</p>
-<p><strong>Telefone:</strong> (11) 99999-9999</p>
-
-</section>
+    <h2 class="titulo-secao">Contato</h2>
+    
+    <div class="contato-container">
+    
+    <div class="contato-box">
+    
+    <div class="contato-info">
+    
+    <h3>Fale Conosco</h3>
+    
+    <p>
+    Estamos prontos para ajudar você e tirar todas as suas dúvidas com rapidez e qualidade.
+    </p>
+    
+    <div class="info-item">
+    <span>📧</span>
+    <span>escola@email.com</span>
+    </div>
+    
+    <div class="info-item">
+    <span>📞</span>
+    <span>(11) 99999-9999</span>
+    </div>
+    
+    <div class="info-item">
+    <span>📍</span>
+    <span>São Paulo - SP</span>
+    </div>
+    
+    </div>
+    
+    </div>
+    
+    </div>
+    
+    </section>
 
 <!-- MAPA -->
 <section id="mapa">
@@ -202,10 +310,29 @@ loading="lazy">
 </section>
 
 <!-- RODAPÉ -->
-<footer>
-<p>© 2026 PEI Carlos de Moraes Andrade</p>
-<p>Contato: escola@email.com | (11) 99999-9999</p>
-</footer>
+
+<footer class="footer">
+    <div class="footer-container">
+  
+      <div class="footer-brand">
+        <h2>PEI Carlos de Moraes Andrade</h2>
+        <p>Educação de qualidade transformando o futuro.</p>
+      </div>
+  
+      <div class="footer-links">
+        <h3>Links rápidos</h3>
+        <a href="#">Início</a>
+        <a href="#">Sobre</a>
+        <a href="#">Projetos</a>
+        <a href="#">Contato</a>
+      </div>
+  
+    </div>
+  
+    <div class="footer-bottom">
+      <p>© 2026 PEI Carlos de Moraes Andrade - Todos os direitos reservados</p>
+    </div>
+  </footer>
 
 <!-- BOTÕES FLUTUANTES -->
 <div class="botoes-flutuantes">
